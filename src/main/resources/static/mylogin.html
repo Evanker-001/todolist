@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="index-login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="left-container">
+            <div class="title">
+                <span>登录</span>
+            </div>
+            <div class="input-container">        
+                <input type="text" id="username" placeholder="用户名" required>
+                <input type="password" id="password" placeholder="密码" required>
+            </div>
+            <div class="message-container">
+                <span>忘记密码</span>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="regist-container">
+                <span class="regist" id="gethref">
+                    点击注册
+                </span>
+            </div>
+            <div class="actoin-container">
+                <input id="submit" type="submit" value="提交">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"> </script>
+
+<script>
+        document.getElementById('gethref').addEventListener('click',function(){
+            window.location.href = "registration.html"
+        })
+
+        const inputButton = document.getElementById('submit')
+        inputButton.onclick = function() {
+            const username = document.getElementById('username').value
+            const password = document.getElementById('password').value
+            if (!username) {
+                alert("请输入账号")
+                return
+            }
+            let data = {username: username,password: password}
+            $.ajax({
+                type:"POST",
+                url:"http://localhost:9090/user/login",
+                data:JSON.stringify(data),
+                contentType:"application/json",
+                success: (res) => {
+                    if(res.code === '-1') {
+                        alert("账号或密码错误")
+                    }else{
+                        alert("登录成功")
+                        window.location.href = "todolist-jquery.html"
+                    }
+                }
+            })
+        }
+
+</script>
+</body>
+</html>

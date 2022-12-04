@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body{
+    background-image: linear-gradient(to bottom right,
+    rgb(114,135,254),
+    rgb(130,88,186));
+}
+.login-container{
+    width: 600px;
+    height: 315px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 10px 50px 0 rgb(58,45,159);
+    border-radius: 15px;
+    background-color: rgb(95, 76, 194);
+}
+.left-container{
+    display: inline-block;
+    width: 330px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 60px;
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(118,75,163),
+        rgb(92,103,211)
+    );
+}
+.left-container .title{
+    color: #fff;
+    font-style: 18px;
+    font-weight: 200;
+    font-size: 19px;
+}
+.left-container .title span{
+    border-bottom: 3px solid rgb(237, 221, 22);
+}
+.left-container .input-container{
+    padding: 20px 0;
+    /*border:1px solid;*/
+}
+.left-container .input-container input{
+    border: 0;
+    background: none;
+    outline: none;
+    color: #fff;
+    margin: 20px 0;
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    transition: .2s;
+    border-bottom: 1px solid rgb(199,191,219);
+}
+.left-container .input-container input:hover{
+    border-bottom-color: #fff;
+}
+.left-container .input-container input::placeholder{
+    color: rgb(199,191,219);
+}
+.left-container .message-container{
+    font-style: 14px;
+    transition: .2s;
+    color: rgb(199,191,219);
+    cursor: pointer;
+}
+.left-container .message-container:hover{
+    color: #fff;
+}
+.right-container{
+    width: 145px;
+    display: inline-block;
+    height: calc(100% - 120px);
+    vertical-align: top;
+    padding: 60px 0;
+}
+.right-container .regist-container{
+    text-align: center;
+    font-weight: 200;
+    color: #fff;
+    font-size: 18px;
+}
+.right-container .regist-container span{
+    border-bottom: 3px solid rgb(237, 221, 22);
+    font-size: 16px;
+    cursor: pointer;
+} 
+.right-container .regist-container input{
+    border-bottom: 3px solid rgb(237, 221, 22);
+} 
+.right-container .actoin-container{
+    font-style: 10px;
+    color: #fff;
+    height: 100%;
+    position: relative;
+}
+.right-container .actoin-container input{
+    border: 1px solid rgb(237,221,22);
+    padding: 10px;
+    display: inline;
+    line-height: 25px;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 10px;
+    left: 47px;
+    transform: .2s;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(95,76,194);
+}
+.right-container .actoin-container input:hover{
+    background-color: rgb(237,221,22);
+    color: rgb(95,76,194);
+}
